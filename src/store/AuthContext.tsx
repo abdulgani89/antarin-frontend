@@ -13,6 +13,9 @@ interface User {
   ktm_url?: string;
   photo_url?: string;
   profile_image?: string;
+  average_rating?: number;
+  rating_count?: number;
+  bank_account?: string;
 }
 
 interface AuthContextType {

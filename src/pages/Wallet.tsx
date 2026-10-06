@@ -54,7 +54,7 @@ const Wallet: React.FC = () => {
   const [pendingTopups, setPendingTopups] = useState<any[]>([]);
   const [pendingWithdrawals, setPendingWithdrawals] = useState<any[]>([]);
 
-  const [activeTab, setActiveTab] = useState<'withdraw' | 'topup'>('topup');
+
 
   const ADMIN_PAYMENT_INFO: Record<string, string> = {
     'QRIS': 'Scan QRIS atau hubungi WA Admin: 0812-3456-7890',
