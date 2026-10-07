@@ -206,9 +206,16 @@ const Wallet: React.FC = () => {
       )}
 
       {/* Withdraw Form */}
-      {user?.role === 'DRIVER' && (
+      {(user?.role === 'DRIVER' || user?.role === 'CUSTOMER') && (
         <div className="card">
           <h2 className="section-title mb-4">Tarik Saldo</h2>
+
+          {user?.role === 'CUSTOMER' && (
+            <div className="px-4 py-3 rounded-lg mb-4 text-sm" style={{background: '#F0F9FF', border: '1px solid #BAE6FD', color: '#0369A1'}}>
+              <p className="font-medium">Penarikan Saldo Customer</p>
+              <p className="text-xs mt-0.5">Anda dapat menarik kembali saldo yang belum digunakan untuk bertransaksi. Penarikan akan dikonfirmasi oleh Admin dalam 1×24 jam.</p>
+            </div>
+          )}
 
           {withdrawMessage.text && (
             <div className={`px-4 py-3 rounded-lg mb-4 text-sm ${withdrawMessage.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 'text-red-600 border border-red-200'}`}
